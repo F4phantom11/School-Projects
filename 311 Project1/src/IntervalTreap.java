@@ -27,4 +27,17 @@ public class IntervalTreap {
         //todo
         return new Node(new Interval(0,1));
     }
+    int max = 0;
+    public void settingImax(Node z){
+        max = 0;
+        if(z == null){
+            return;
+        }
+        settingImax(z.getLeft());
+  settingImax(z.getRight());
+        if(z.getInterval().getHigh()>max) {
+            max = z.getInterval().getHigh();
+        }
+        z.setImax(max);
+    }
 }

@@ -1,14 +1,22 @@
+import java.util.Random;
+
 public class Node {
     private Node parent,left,right;
     private Interval interval;
-    private int imax,prioity,height;
+    private int imax=0,prioity,height;
+    private Random rand =  new Random();
     Node (Interval i){
 interval = i;
-prioity = 5;
+prioity = rand.nextInt(100);
     }
 
     public int getImax() {
         return imax;
+    }
+
+    public void setImax(int imax) {
+
+        this.imax = imax;
     }
 
     public int getPrioity() {
@@ -37,5 +45,9 @@ prioity = 5;
 
     public void setRight(Node right) {
         this.right = right;
+    }
+
+    public void setParent(Node parent) {
+        this.parent = parent;
     }
 }
