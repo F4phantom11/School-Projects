@@ -3,11 +3,11 @@ import java.util.Random;
 public class Node {
     private Node parent,left,right;
     private Interval interval;
-    private int imax=0,prioity,height;
+    private int imax=0,priority,height;
     private Random rand =  new Random();
     Node (Interval i){
 interval = i;
-prioity = rand.nextInt(100);
+priority = rand.nextInt(100);
     }
 
     public int getImax() {
@@ -19,8 +19,12 @@ prioity = rand.nextInt(100);
         this.imax = imax;
     }
 
-    public int getPrioity() {
-        return prioity;
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
     }
 
     public Interval getInterval() {
