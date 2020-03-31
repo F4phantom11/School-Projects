@@ -5,9 +5,10 @@ public class Node {
     private Interval interval;
     private int imax=0,prioity,height;
     private Random rand =  new Random();
+
     Node (Interval i){
-interval = i;
-prioity = rand.nextInt(100);
+        interval = i;
+        prioity = rand.nextInt(100);
     }
 
     public int getImax() {
