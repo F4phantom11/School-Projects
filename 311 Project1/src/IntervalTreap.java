@@ -49,7 +49,7 @@ public class IntervalTreap {
                 y.setRight(z);
             }
            if(y!=null) {
-                while (z.getParent()!=null &&z.getParent().getPriority() > z.getPriority()) {
+                while (z.getParent()!=null && z.getParent().getPriority() > z.getPriority()) {
                     if (z.getParent().getLeft() == z) {
 
                      z=   rotateRight(z.getParent());
@@ -59,14 +59,16 @@ public class IntervalTreap {
                 }
             }
 
-
+        settingImax(getRoot());
     }
     void intervalDelete(Node z){
      //todo
     }
     Node intervalSearch(Interval i){
         Node x = root;
-        while (x!=null && ((i.getLow()>x.getInterval().getLow())&&i.getLow()>x.getInterval().getHigh())){
+        int count=0;
+        System.out.println(doesOverlap(i,x.getInterval()));
+        while (x!=null&&!doesOverlap(i,x.getInterval())){
             if(x.getLeft()!=null&&x.getLeft().getImax()>= i.getLow()){
                 x=x.getLeft();
             }
@@ -75,6 +77,7 @@ public class IntervalTreap {
             }
 
         }
+
         return x;
     }
     int max = 0;
@@ -95,22 +98,62 @@ public class IntervalTreap {
     }
     private Node rotateRight(Node subRoot){
         Node R = subRoot.getLeft();
-        Node Y = subRoot.getLeft().getRight();
-        if(subRoot==getRoot()){
+        subRoot.setLeft(R.getRight());
+        if(R.getRight()!=null){
+            R.getRight().setParent(subRoot);
+        }
+        R.setParent(subRoot.getParent());
+        if(subRoot.getParent()==null){
             setRoot(R);
         }
+        else if(subRoot==subRoot.getParent().getRight()){
+            subRoot.getParent().setRight(R);
+        }
+        else{
+            subRoot.getParent().setLeft(R);
+        }
         R.setRight(subRoot);
-        R.setParent(subRoot.getParent());
         subRoot.setParent(R);
-        subRoot.setLeft(Y);
         return R;
     }
     private Node rotateLeft(Node subRoot){
-
-        Node L = subRoot.getRight();
-        Node X = subRoot.getRight().getLeft();
-        L.setLeft(subRoot);
-        subRoot.setRight(X);
+Node L = subRoot.getRight();
+subRoot.setRight(L.getLeft());
+if(L.getLeft()!=null){
+    L.getLeft().setParent(subRoot);
+}
+L.setParent(subRoot.getParent());
+    if(subRoot.getParent()==null){
+        setRoot(L);
+    }
+    else if(subRoot==subRoot.getParent().getLeft()){
+        subRoot.getParent().setLeft(L);
+    }
+    else{
+        subRoot.getParent().setRight(L);
+    }
+    L.setLeft(subRoot);
+    subRoot.setParent(L);
         return L;
+    }
+    /*
+       Node L = subRoot.getRight();
+        Node X = subRoot.getRight().getLeft();
+        if(subRoot==getRoot()){
+            setRoot(L);
+        }
+        if(subRoot.getParent()!=null&&subRoot.getParent().getRight()==subRoot) {
+            subRoot.getParent().setRight(L);
+        }
+        else if(subRoot.getParent()!=null&&subRoot.getParent().getLeft()==subRoot) {
+            subRoot.getParent().setLeft(L);
+        }
+        L.setLeft(subRoot);
+        L.setParent(subRoot.getParent());
+        subRoot.setParent(L);
+        subRoot.setRight(X);
+     */
+    private boolean doesOverlap(Interval test, Interval in ){
+        return ((test.getHigh() >= in.getLow()) && test.getHigh() <= in.getHigh()) || ((test.getLow() >= in.getLow()) && test.getLow() <= in.getHigh()||(test.getLow()<=in.getHigh()&&test.getHigh()>=in.getHigh()));
     }
 }

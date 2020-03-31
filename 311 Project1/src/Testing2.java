@@ -22,7 +22,6 @@ public class Testing2 {
     private ArrayList<Interval> TP;
     private ArrayList<Interval> TN;
     private Scanner sc;
-
     @Before
     public void setUp() throws Exception {
         it1 = new IntervalTreap();
@@ -42,6 +41,7 @@ public class Testing2 {
     @Test
     public void testMini() {
         scanConstruct("src/mini_1.txt");
+
         for (Interval i : TP) {
             assertNotNull(it1.intervalSearch(i));
         }
@@ -54,7 +54,8 @@ public class Testing2 {
     @Test
     public void testSmall() {
         scanConstruct("src/small_1.txt");
-        for (Interval i : TP) {
+
+       for (Interval i : TP) {
             assertNotNull(it1.intervalSearch(i));
         }
         for (Interval j : TN) {
@@ -72,18 +73,20 @@ public class Testing2 {
         for (Interval j : TN) {
             assertNull(it1.intervalSearch(j));
         }
+
+
         testTreapStructure(it1);
     }
 
     @Test
     public void testLarge() {
         scanConstruct("src/large_1.txt");
-        for (Interval i : TP) {
+      /*  for (Interval i : TP) {
             assertNotNull(it1.intervalSearch(i));
         }
         for (Interval j : TN) {
             assertNull(it1.intervalSearch(j));
-        }
+        }*/
         testTreapStructure(it1);
     }
 
@@ -94,6 +97,7 @@ public class Testing2 {
 
         //Check if the array is sorted. If it is not sorted, it's not a valid treap.
         for (int k =0; k < inOrder.size()-1; k++) {
+            System.out.println(inOrder.get(k).getPriority());
             if (inOrder.get(k).getInterval().getLow() > inOrder.get(k+1).getInterval().getLow()) {
                 fail("failed treap's BST property!");
             }
@@ -122,6 +126,7 @@ public class Testing2 {
         File f = new File(fn);
         String line;
         String [] split;
+        int count=0;
         try {
             sc = new Scanner(f);
             sc.nextLine(); //skip first line "TP"
@@ -138,6 +143,7 @@ public class Testing2 {
                 TN.add(new Interval(Integer.parseInt(split[0]),Integer.parseInt(split[1])));
             }
             while(sc.hasNextLine()) {
+              //  System.out.println(count++);
                 line = sc.nextLine();
                 split = line.split(" ");
                 it1.intervalInsert(new Node(new Interval(Integer.parseInt(split[0]),Integer.parseInt(split[1]))));

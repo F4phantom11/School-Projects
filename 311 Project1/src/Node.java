@@ -7,7 +7,7 @@ public class Node {
     private Random rand =  new Random();
     Node (Interval i){
 interval = i;
-priority = rand.nextInt(100);
+priority = rand.nextInt(1000000000);
     }
 
     public int getImax() {
