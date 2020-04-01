@@ -3,7 +3,7 @@ import java.util.Random;
 public class Node {
     private Node parent,left,right;
     private Interval interval;
-    private int imax=0,priority,height;
+    private int imax=0,priority,height=0;
     private Random rand =  new Random();
     Node (Interval i){
 interval = i;
@@ -53,5 +53,13 @@ priority = rand.nextInt(1000000000);
 
     public void setParent(Node parent) {
         this.parent = parent;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

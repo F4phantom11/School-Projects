@@ -81,12 +81,12 @@ public class Testing2 {
     @Test
     public void testLarge() {
         scanConstruct("src/large_1.txt");
-      /*  for (Interval i : TP) {
+        for (Interval i : TP) {
             assertNotNull(it1.intervalSearch(i));
         }
         for (Interval j : TN) {
             assertNull(it1.intervalSearch(j));
-        }*/
+        }
         testTreapStructure(it1);
     }
 
@@ -97,7 +97,7 @@ public class Testing2 {
 
         //Check if the array is sorted. If it is not sorted, it's not a valid treap.
         for (int k =0; k < inOrder.size()-1; k++) {
-            System.out.println(inOrder.get(k).getPriority());
+           // System.out.println(inOrder.get(k).getPriority());
             if (inOrder.get(k).getInterval().getLow() > inOrder.get(k+1).getInterval().getLow()) {
                 fail("failed treap's BST property!");
             }

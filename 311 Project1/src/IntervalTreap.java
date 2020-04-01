@@ -10,6 +10,8 @@ public class IntervalTreap {
         return height;
     }
 
+
+
     public int getSize() {
         return size;
     }
@@ -24,22 +26,34 @@ public class IntervalTreap {
 
     void intervalInsert(Node z){
         //todo
-
+int countH=0;
         z.setImax(z.getInterval().getHigh());
         Node y = null;
         Node x = root;
         while(x!=null) {
             y = x;
             if (z.getInterval().getLow() < x.getInterval().getLow()) {
+                x.setImax(Math.max(x.getImax(),z.getInterval().getHigh()));
+                if(x.getLeft()==null){
+                   // heightRec(x);
+                }
+
                 x = x.getLeft();
             } else {
+                x.setImax(Math.max(x.getImax(),z.getInterval().getHigh()));
+
+                if(x.getRight()==null){
+                   // heightRec(x);
+                }
                 x = x.getRight();
+
             }
         }
 
             z.setParent(y);
             if(y==null) {
                 setRoot(z);
+                z.setHeight(0);
             }
             else if(z.getInterval().getLow()<y.getInterval().getLow()){
 
@@ -48,18 +62,93 @@ public class IntervalTreap {
             else {
                 y.setRight(z);
             }
+        heightRec(z);
            if(y!=null) {
                 while (z.getParent()!=null && z.getParent().getPriority() > z.getPriority()) {
                     if (z.getParent().getLeft() == z) {
 
                      z=   rotateRight(z.getParent());
+
+                     if(z.getRight()==null&&z.getLeft()==null){
+                         z.setImax(z.getInterval().getHigh());
+                         heightRec(z);
+                     }
+                     else if(z.getRight()==null&&z.getLeft()!=null){
+                       z.setImax(Math.max(z.getInterval().getHigh(),z.getLeft().getImax()));
+                         heightRec(z.getLeft());
+                     }
+                     else if(z.getRight()!=null&&z.getLeft()==null){
+                         z.setImax(Math.max(z.getInterval().getHigh(),z.getRight().getImax()));
+                         heightRec(z.getRight());
+                     }
+                     else{
+                         int max= Math.max(z.getInterval().getHigh(),z.getRight().getImax());
+                         z.setImax(Math.max(max,z.getLeft().getImax()));
+                         heightRec(z.getRight());
+                     }
+
+//----------------------------------------------------------------------------------------------------------------------------
+                        if(z.getRight()!=null){
+                            Node rightZ = z.getRight();
+                       if(rightZ.getRight()==null&&rightZ.getLeft()==null){
+                            rightZ.setImax(rightZ.getInterval().getHigh());
+                        }
+                        else if(rightZ.getRight()==null&&rightZ.getLeft()!=null){
+                            rightZ.setImax(Math.max(rightZ.getInterval().getHigh(),rightZ.getLeft().getImax()));
+                        }
+                        else if(rightZ.getRight()!=null&&rightZ.getLeft()==null){
+                            rightZ.setImax(Math.max(rightZ.getInterval().getHigh(),rightZ.getRight().getImax()));
+                        }
+                        else{
+                            int max= Math.max(rightZ.getInterval().getHigh(),rightZ.getRight().getImax());
+                            rightZ.setImax(Math.max(max,rightZ.getLeft().getImax()));
+                        }
+                        }
                     } else {
                        z= rotateLeft(z.getParent());
+
+                        if(z.getRight()==null&&z.getLeft()==null){
+                            z.setImax(z.getInterval().getHigh());
+                            heightRec(z);
+                        }
+                        else if(z.getRight()==null&&z.getLeft()!=null){
+                            z.setImax(Math.max(z.getInterval().getHigh(),z.getLeft().getImax()));
+                            heightRec(z.getLeft());
+                        }
+                        else if(z.getRight()!=null&&z.getLeft()==null){
+                            z.setImax(Math.max(z.getInterval().getHigh(),z.getRight().getImax()));
+                            heightRec(z.getRight());
+                        }
+                        else {
+                            int max = Math.max(z.getInterval().getHigh(), z.getRight().getImax());
+                            z.setImax(Math.max(max, z.getLeft().getImax()));
+                            heightRec(z.getLeft());
+                        }
+
+
+
+                        if(z.getLeft()!=null){
+                            Node rightZ = z.getLeft();
+                            if(rightZ.getRight()==null&&rightZ.getLeft()==null){
+                                rightZ.setImax(rightZ.getInterval().getHigh());
+                            }
+                            else if(rightZ.getRight()==null&&rightZ.getLeft()!=null){
+                                rightZ.setImax(Math.max(rightZ.getInterval().getHigh(),rightZ.getLeft().getImax()));
+                            }
+                            else if(rightZ.getRight()!=null&&rightZ.getLeft()==null){
+                                rightZ.setImax(Math.max(rightZ.getInterval().getHigh(),rightZ.getRight().getImax()));
+                            }
+                            else{
+                                int max= Math.max(rightZ.getInterval().getHigh(),rightZ.getRight().getImax());
+                                rightZ.setImax(Math.max(max,rightZ.getLeft().getImax()));
+                            }
+                        }
                     }
                 }
             }
 
-        settingImax(getRoot());
+       // settingImax(getRoot());
+
     }
     void intervalDelete(Node z){
      //todo
@@ -67,7 +156,7 @@ public class IntervalTreap {
     Node intervalSearch(Interval i){
         Node x = root;
         int count=0;
-        System.out.println(doesOverlap(i,x.getInterval()));
+      //  System.out.println(doesOverlap(i,x.getInterval()));
         while (x!=null&&!doesOverlap(i,x.getInterval())){
             if(x.getLeft()!=null&&x.getLeft().getImax()>= i.getLow()){
                 x=x.getLeft();
@@ -155,5 +244,27 @@ L.setParent(subRoot.getParent());
      */
     private boolean doesOverlap(Interval test, Interval in ){
         return ((test.getHigh() >= in.getLow()) && test.getHigh() <= in.getHigh()) || ((test.getLow() >= in.getLow()) && test.getLow() <= in.getHigh()||(test.getLow()<=in.getHigh()&&test.getHigh()>=in.getHigh()));
+    }
+    private void heightRec(Node parent){
+        if(parent==null){
+            return;
+        }
+        if(parent == getRoot() && parent.getRight()==null&&parent.getLeft()==null){
+            parent.setHeight(1);
+        }
+        else if(parent.getRight()==null&&parent.getLeft()==null){
+parent.setHeight(0);
+        }
+        else if(parent.getLeft()==null){
+            parent.setHeight(parent.getRight().getHeight()+1);
+        }
+        else if(parent.getRight()==null){
+            parent.setHeight(parent.getLeft().getHeight()+1);
+        }
+        else{
+            parent.setHeight(Math.max(parent.getLeft().getHeight(),parent.getRight().getHeight())+1);
+        }
+
+        heightRec(parent.getParent());
     }
 }
