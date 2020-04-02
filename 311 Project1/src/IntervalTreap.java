@@ -26,7 +26,7 @@ public class IntervalTreap {
 
     void intervalInsert(Node z){
         //todo
-int countH=0;
+        int countH=0;
         z.setImax(z.getInterval().getHigh());
         Node y = null;
         Node x = root;
@@ -152,7 +152,8 @@ int countH=0;
     }
 
     void intervalDelete(Node z){
-     //todo
+        //todo
+
     }
     Node intervalSearch(Interval i){
         Node x = root;
