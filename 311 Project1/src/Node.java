@@ -1,14 +1,14 @@
 import java.util.Random;
 
 public class Node {
-    private Node parent,left,right;
+    private Node parent, left, right;
     private Interval interval;
-    private int imax=0,priority,height=0;
-    private Random rand =  new Random();
+    private int imax = 0, priority, height = 0;
+    private Random rand = new Random();
 
-    Node (Interval i){
-interval = i;
-priority = rand.nextInt(1000000000);
+    Node(Interval i) {
+        interval = i;
+        priority = rand.nextInt(1000000000);
     }
 
     public int getImax() {
