@@ -137,11 +137,18 @@ public class IntervalTreap {
 
     }
 
-    void intervalDelete(Node z) { // TODO : Second phase of deletion
+    void intervalDelete(Node z) { // TODO : Update height for nodes getting moved
+        boolean isLeftChild = z.isLeftChild();
+        Node parent = z.getParent();
+
         // First phase of deletion
         if (z.getLeft() == null) {
             // CASE 1 : Left child is empty
-            z.getRight().setParent(z.getParent());
+            if(z.getRight() != null) {
+                z.getRight().setParent(z.getParent());
+            } else {
+                z.getParent().setRight(null);
+            }
             z = z.getRight();
         } else if (z.getLeft() != null && z.getRight() == null) {
             // CASE 2 : Right child is empty
@@ -151,7 +158,7 @@ public class IntervalTreap {
             // CASE 3 : Two children exist
             Node y = Successor(z);
             if (z.getLeft() != null && z.getRight() == y) { // Case A
-                Node parent = z.getParent();
+                parent = z.getParent();
                 z = y;
                 z.setParent(parent);
             } else if (z.getLeft() != null && z.getRight() != y) { // Case B
@@ -168,17 +175,33 @@ public class IntervalTreap {
                 // Replace z by w
                 z = w;
             }
+
         }
 
-        while(z.getParent().getPriority() > z.getPriority()){
-            if(z.getParent().getLeft() == z){ // If z is a left child of its parent
-                rotateRight(z.getParent());
-                updateImax(z.getRight());
+        // Update parent node to reflect change of child
+        if(z != null && z.getParent() != null) {
+            if (isLeftChild) {
+                z.getParent().setLeft(z);
+            } else {
+                z.getParent().setRight(z);
             }
-            else { // If not a left child, then must be a right child
-                rotateLeft(z.getParent());
-                updateImax(z.getLeft());
+        }
+
+        // Second phase of deletion, fixing priority and Imax fields
+        if(z != null && z.getParent() != null) {
+            while (z.getParent().getPriority() > z.getPriority()) {
+                if (z.getParent().getLeft() == z) { // If z is a left child of its parent
+                    rotateRight(z.getParent());
+                    updateImax(z.getRight());
+                } else { // If not a left child, then must be a right child
+                    rotateLeft(z.getParent());
+                    updateImax(z.getLeft());
+                }
+                updateImax(z);
             }
+        } else if(parent != null){
+            updateImax(parent);
+        } else {
             updateImax(z);
         }
 
@@ -204,13 +227,25 @@ public class IntervalTreap {
         int max = subRoot.getInterval().getHigh();
         if(subRoot.getLeft() != null){
             if(subRoot.getLeft().getImax() > max){
-                subRoot.setImax(subRoot.getLeft().getImax());
+                max = subRoot.getLeft().getImax();
             }
         }
         if(subRoot.getRight() != null){
             if(subRoot.getRight().getImax() > max){
-                subRoot.setImax(subRoot.getRight().getImax());
+                max = subRoot.getRight().getImax();
             }
+        }
+
+        subRoot.setImax(max);
+    }
+
+    public void updateHeight(Node subRoot){ // TODO : Make correct or use heightRec() function for height
+        if(subRoot.getLeft() != null){
+            subRoot.setHeight(subRoot.getLeft().getHeight() + 1);
+        } else if (subRoot.getRight() != null){
+            subRoot.setHeight(subRoot.getRight().getHeight() + 1);
+        } else {
+            subRoot.setHeight(0);
         }
     }
 
@@ -347,4 +382,5 @@ public class IntervalTreap {
 
         return y;
     }
+
 }

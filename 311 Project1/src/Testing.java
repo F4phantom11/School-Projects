@@ -185,12 +185,6 @@ public class Testing {
         intervalTreap.intervalInsert(node6);
         intervalTreap.intervalInsert(node4);
         intervalTreap.intervalInsert(node3);
-
-        //intervalTreap.intervalInsert(node5);
-
-
-        //intervalTreap.intervalInsert(node7);
-
     }
 
     @Test
@@ -248,10 +242,6 @@ public class Testing {
         Assert.assertEquals(0, node5.getHeight());
         Assert.assertEquals(1, node6.getHeight());
         Assert.assertEquals(0, node7.getHeight());
-        //intervalTreap.intervalInsert(node5);
-        //   Assert.assertEquals(node2, intervalTreap.getRoot());
-        // Assert.assertEquals(node, node2.getRight());
-        //Assert.assertEquals(node3, node.getRight());
         ArrayList<Node> inOrder = new ArrayList<Node>();
         inOrder(intervalTreap.getRoot(), inOrder);
         for (Node value : inOrder) {
@@ -278,16 +268,6 @@ public class Testing {
 
     @Test
     public void heighttest() {
-    /*    treap.intervalInsert(root);
-    treap.intervalInsert(node1R);
-    treap.intervalInsert(node1L);
-    treap.intervalInsert(node2L);
-    treap.intervalInsert(node2R);
-    treap.intervalInsert(node3L);
-    treap.intervalInsert(node3R);
-    treap.intervalInsert(node4L);
-    treap.intervalInsert(node4R);
-    treap.intervalInsert(node5L);*/
         Assert.assertEquals(3, root.getHeight());
         Assert.assertEquals(2, node1L.getHeight());
         Assert.assertEquals(1, node2L.getHeight());
@@ -333,7 +313,28 @@ public class Testing {
 
     @Test
     public void IntervalDeleteTest(){
+        Node tmpNode;
 
+        treap.intervalDelete(node3R);
+        tmpNode = root.getRight().getLeft();
+        Assert.assertEquals(19, tmpNode.getInterval().getLow());
+        Assert.assertEquals(20, tmpNode.getInterval().getHigh());
+
+        treap.intervalDelete(node5L);
+        tmpNode = root.getLeft();
+        Assert.assertEquals(10, tmpNode.getImax());
+        Assert.assertEquals(node1L, tmpNode);
+
+        treap.intervalDelete(node1L);
+        tmpNode = root.getLeft();
+        Assert.assertEquals(5, tmpNode.getInterval().getLow());
+
+        setUp();
+
+        treap.intervalDelete(root);
+        Assert.assertEquals(16, root.getInterval().getLow());
+        Assert.assertEquals(node1L, root.getLeft());
+        Assert.assertEquals(node1R, root.getRight());
     }
 
 }

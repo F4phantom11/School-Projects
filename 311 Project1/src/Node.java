@@ -63,4 +63,19 @@ public class Node {
     public void setHeight(int height) {
         this.height = height;
     }
+
+    /**
+     * Checks to see if the given node is a left child of its parent
+     * @return
+     */
+    public boolean isLeftChild(){
+        if(getParent() == null){
+            return false;
+        }
+        if(getParent().getLeft() == this){
+            return true;
+        }
+
+        return false;
+    }
 }

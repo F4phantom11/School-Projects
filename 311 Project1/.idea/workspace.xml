@@ -19,24 +19,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/IntervalTreap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="610">
-              <caret line="177" column="69" selection-start-line="177" selection-start-column="69" selection-end-line="177" selection-end-column="69" />
+            <state relative-caret-position="410">
+              <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
               <folding>
                 <element signature="method#IntervalTreap#0;class#IntervalTreap#0" />
                 <element signature="method#intervalInsert#0;class#IntervalTreap#0" />
                 <element signature="method#intervalSearch#0;class#IntervalTreap#0" />
+                <element signature="method#updateImax#0;class#IntervalTreap#0" />
                 <element signature="method#rotateLeft#0;class#IntervalTreap#0" />
                 <element signature="n#!!doc;n#doesOverlap#0;n#IntervalTreap#0" />
                 <element signature="method#doesOverlap#0;class#IntervalTreap#0" />
-                <element signature="method#heightRec#0;class#IntervalTreap#0" />
                 <element signature="method#Minimum#0;class#IntervalTreap#0" />
                 <element signature="method#Successor#0;class#IntervalTreap#0" />
               </folding>
@@ -56,8 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="867">
+              <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+              <folding>
+                <element signature="e#726#727#0" expanded="true" />
+                <element signature="e#755#756#0" expanded="true" />
+                <element signature="e#785#786#0" expanded="true" />
+                <element signature="e#813#814#0" expanded="true" />
+                <element signature="e#999#1000#0" expanded="true" />
+                <element signature="e#1035#1036#0" expanded="true" />
+                <element signature="docComment;method#isLeftChild#0;class#Node#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Testing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5576">
-              <caret line="335" selection-start-line="335" selection-end-line="335" />
+            <state relative-caret-position="786">
+              <caret line="318" column="8" lean-forward="true" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -146,7 +154,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Testing">
+  <component name="RunManager" selected="JUnit.Testing.IntervalDeleteTest">
     <configuration name="Testing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="311 Project1" />
       <option name="PACKAGE_NAME" value="" />
@@ -165,21 +173,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testing.hieghttest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testing.IntervalDeleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="311 Project1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Testing" />
-      <option name="METHOD_NAME" value="hieghttest" />
+      <option name="METHOD_NAME" value="IntervalDeleteTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testing.insertChildPriorit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testing.hieghttest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="311 Project1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="Testing" />
-      <option name="METHOD_NAME" value="insertChildPriorit" />
+      <option name="METHOD_NAME" value="hieghttest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +205,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Testing.IntervalDeleteTest" />
         <item itemvalue="JUnit.Testing" />
         <item itemvalue="JUnit.Testing2" />
         <item itemvalue="JUnit.Testing.hieghttest" />
         <item itemvalue="JUnit.Testing.insertChildRotatingHeight" />
-        <item itemvalue="JUnit.Testing.insertChildPriorit" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +226,38 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 39m 49s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 40m 20s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 42m 20s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 46m 05s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 57m 41s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 59m 10s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 59m 48s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 00m 14s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 06m 57s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 07m 52s.xml">
+      <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
@@ -230,10 +270,11 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32932165" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26805252" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -377,13 +418,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Testing.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5576">
-          <caret line="335" selection-start-line="335" selection-end-line="335" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -396,23 +434,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="867">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+          <folding>
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
+            <element signature="e#999#1000#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="docComment;method#isLeftChild#0;class#Node#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Testing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="318" column="8" lean-forward="true" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IntervalTreap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="610">
-          <caret line="177" column="69" selection-start-line="177" selection-start-column="69" selection-end-line="177" selection-end-column="69" />
+        <state relative-caret-position="410">
+          <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
           <folding>
             <element signature="method#IntervalTreap#0;class#IntervalTreap#0" />
             <element signature="method#intervalInsert#0;class#IntervalTreap#0" />
             <element signature="method#intervalSearch#0;class#IntervalTreap#0" />
+            <element signature="method#updateImax#0;class#IntervalTreap#0" />
             <element signature="method#rotateLeft#0;class#IntervalTreap#0" />
             <element signature="n#!!doc;n#doesOverlap#0;n#IntervalTreap#0" />
             <element signature="method#doesOverlap#0;class#IntervalTreap#0" />
-            <element signature="method#heightRec#0;class#IntervalTreap#0" />
             <element signature="method#Minimum#0;class#IntervalTreap#0" />
             <element signature="method#Successor#0;class#IntervalTreap#0" />
           </folding>
