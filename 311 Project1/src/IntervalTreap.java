@@ -1,3 +1,5 @@
+import static java.lang.Integer.MIN_VALUE;
+
 public class IntervalTreap {
     private Node root;
     private int size, height;
@@ -167,7 +169,19 @@ public class IntervalTreap {
                 z = w;
             }
         }
-        
+
+        while(z.getParent().getPriority() > z.getPriority()){
+            if(z.getParent().getLeft() == z){ // If z is a left child of its parent
+                rotateRight(z.getParent());
+                updateImax(z.getRight());
+            }
+            else { // If not a left child, then must be a right child
+                rotateLeft(z.getParent());
+                updateImax(z.getLeft());
+            }
+            updateImax(z);
+        }
+
     }
 
     Node intervalSearch(Interval i) {
@@ -184,6 +198,20 @@ public class IntervalTreap {
         }
 
         return x;
+    }
+
+    public void updateImax(Node subRoot){
+        int max = subRoot.getInterval().getHigh();
+        if(subRoot.getLeft() != null){
+            if(subRoot.getLeft().getImax() > max){
+                subRoot.setImax(subRoot.getLeft().getImax());
+            }
+        }
+        if(subRoot.getRight() != null){
+            if(subRoot.getRight().getImax() > max){
+                subRoot.setImax(subRoot.getRight().getImax());
+            }
+        }
     }
 
     public void settingImax(Node z) {
