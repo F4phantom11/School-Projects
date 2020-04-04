@@ -319,22 +319,22 @@ public class Testing {
         tmpNode = root.getRight().getLeft();
         Assert.assertEquals(19, tmpNode.getInterval().getLow());
         Assert.assertEquals(20, tmpNode.getInterval().getHigh());
+        Assert.assertEquals(3, root.getHeight());
+        Assert.assertEquals(1, root.getRight().getHeight());
+        Assert.assertEquals(0, tmpNode.getHeight());
 
         treap.intervalDelete(node5L);
         tmpNode = root.getLeft();
         Assert.assertEquals(10, tmpNode.getImax());
         Assert.assertEquals(node1L, tmpNode);
+        Assert.assertEquals(2, tmpNode.getHeight());
 
         treap.intervalDelete(node1L);
         tmpNode = root.getLeft();
         Assert.assertEquals(5, tmpNode.getInterval().getLow());
-
-        setUp();
-
-        treap.intervalDelete(root);
-        Assert.assertEquals(16, root.getInterval().getLow());
-        Assert.assertEquals(node1L, root.getLeft());
-        Assert.assertEquals(node1R, root.getRight());
+        Assert.assertEquals(1, tmpNode.getHeight());
+        Assert.assertEquals(0, tmpNode.getLeft().getHeight());
+        Assert.assertEquals(0, tmpNode.getRight().getHeight());
     }
 
 }

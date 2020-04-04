@@ -179,7 +179,7 @@ public class IntervalTreap {
         }
 
         // Update parent node to reflect change of child
-        if(z != null && z.getParent() != null) {
+        if(z != null && z.getParent() != null) { // If z doesn't have a parent, then it is a root
             if (isLeftChild) {
                 z.getParent().setLeft(z);
             } else {
@@ -205,6 +205,7 @@ public class IntervalTreap {
             updateImax(z);
         }
 
+        heightRec(z);
     }
 
     Node intervalSearch(Interval i) {

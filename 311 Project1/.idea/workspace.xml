@@ -23,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IntervalTreap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
+            <state relative-caret-position="-358">
+              <caret line="141" column="36" lean-forward="true" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
               <folding>
                 <element signature="method#IntervalTreap#0;class#IntervalTreap#0" />
                 <element signature="method#intervalInsert#0;class#IntervalTreap#0" />
@@ -55,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="832">
               <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
               <folding>
                 <element signature="e#726#727#0" expanded="true" />
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Testing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="318" column="8" lean-forward="true" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
+            <state relative-caret-position="225">
+              <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,8 +92,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/Interval.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
-        <option value="$PROJECT_DIR$/src/Testing.java" />
         <option value="$PROJECT_DIR$/src/IntervalTreap.java" />
+        <option value="$PROJECT_DIR$/src/Testing.java" />
       </list>
     </option>
   </component>
@@ -227,34 +227,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 39m 49s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 24m 56s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 40m 20s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 25m 28s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 42m 20s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 31m 17s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 46m 05s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 31m 57s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 57m 41s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 32m 19s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 59m 10s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 32m 35s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 17h 59m 48s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 33m 26s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 00m 14s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 34m 48s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 06m 57s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 36m 58s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testing_IntervalDeleteTest - 2020.04.03 at 18h 07m 52s.xml">
+    <history-entry file="Testing_IntervalDeleteTest - 2020.04.04 at 18h 38m 30s.xml">
       <configuration name="Testing.IntervalDeleteTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -270,7 +270,6 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32932165" />
@@ -281,6 +280,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -432,9 +432,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntervalTreap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-358">
+          <caret line="141" column="36" lean-forward="true" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
+          <folding>
+            <element signature="method#IntervalTreap#0;class#IntervalTreap#0" />
+            <element signature="method#intervalInsert#0;class#IntervalTreap#0" />
+            <element signature="method#intervalSearch#0;class#IntervalTreap#0" />
+            <element signature="method#updateImax#0;class#IntervalTreap#0" />
+            <element signature="method#rotateLeft#0;class#IntervalTreap#0" />
+            <element signature="n#!!doc;n#doesOverlap#0;n#IntervalTreap#0" />
+            <element signature="method#doesOverlap#0;class#IntervalTreap#0" />
+            <element signature="method#Minimum#0;class#IntervalTreap#0" />
+            <element signature="method#Successor#0;class#IntervalTreap#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="832">
           <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
           <folding>
             <element signature="e#726#727#0" expanded="true" />
@@ -450,28 +468,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Testing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="318" column="8" lean-forward="true" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="8" />
+        <state relative-caret-position="225">
+          <caret line="324" lean-forward="true" selection-start-line="324" selection-end-line="324" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/IntervalTreap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="344" column="9" lean-forward="true" selection-start-line="344" selection-start-column="9" selection-end-line="344" selection-end-column="9" />
-          <folding>
-            <element signature="method#IntervalTreap#0;class#IntervalTreap#0" />
-            <element signature="method#intervalInsert#0;class#IntervalTreap#0" />
-            <element signature="method#intervalSearch#0;class#IntervalTreap#0" />
-            <element signature="method#updateImax#0;class#IntervalTreap#0" />
-            <element signature="method#rotateLeft#0;class#IntervalTreap#0" />
-            <element signature="n#!!doc;n#doesOverlap#0;n#IntervalTreap#0" />
-            <element signature="method#doesOverlap#0;class#IntervalTreap#0" />
-            <element signature="method#Minimum#0;class#IntervalTreap#0" />
-            <element signature="method#Successor#0;class#IntervalTreap#0" />
           </folding>
         </state>
       </provider>
